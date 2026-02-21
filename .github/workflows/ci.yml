@@ -20,3 +20,13 @@ jobs:
 
       - name: Lancer les tests
         run: ./vendor/bin/phpunit tests
+
+  deploy:
+    needs: run-tests # <--- TRÈS IMPORTANT : ne se lance que si run-tests est vert
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulation du déploiement
+        run: |
+          echo "🚀 Connexion au serveur de production..."
+          echo "📦 Récupération du code validé..."
+          echo "✅ Application déployée avec succès sur http://mon-app-tva.com
