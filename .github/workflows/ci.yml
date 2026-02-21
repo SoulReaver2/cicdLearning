@@ -1,0 +1,22 @@
+name: Mon Super Pipeline PHP
+
+on: [push] # Déclencheur : n'importe quel push sur le repo
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest # Le type de serveur qui va bosser
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+
+      - name: Installer les dépendances
+        run: composer install
+
+      - name: Lancer les tests
+        run: ./vendor/bin/phpunit tests
