@@ -29,4 +29,4 @@ jobs:
         run: |
           echo "🚀 Connexion au serveur de production..."
           echo "📦 Récupération du code validé..."
-          echo "✅ Application déployée avec succès sur http://mon-app-tva.com
+          echo "✅ Application déployée avec succès sur http://mon-app-tva.com"
